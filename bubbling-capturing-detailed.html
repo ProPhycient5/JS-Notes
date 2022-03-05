@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+ 
+ <div id="grandParent" style="padding: 30px; background-color: gold;">Grand parent div
+    <div id="parent" style="padding: 30px; background-color: lightgreen;">Parent div
+       <div id="child" style="padding: 30px; background-color: lightpink;">Child div</div>
+    </div>
+ </div>
+</body>
+
+<script type="text/javascript">
+	const grandParent = document.getElementById("grandParent");
+	const parent = document.getElementById("parent");
+	const child = document.getElementById("child");
+
+	grandParent.addEventListener("click", (e) => {
+		console.log("u clicked on grandParent DIV");
+	});
+	parent.addEventListener("click", (e) => {
+		console.log("u clicked on parent DIV");
+	})
+	child.addEventListener("click", (e) => {
+		console.log("u clicked on child DIV");
+	} )
+</script>
+</html>
+
+<!-- 1.While clicking on Grand-parent-div(or golden colored div), we get output in console as:
+--u clicked on grandParent DIV
+2. While clicking on Parent-div(or lightgreen colored div), we get output in console as:  
+--u clicked on parent DIV
+--bubbling-capturing-detailed.html:23 u clicked on grandParent DIV
+3. While clicking on Child-div(or lightpink colored div), we get output in console as: 
+--u clicked on child DIV
+--bubbling-capturing-detailed.html:26 u clicked on parent DIV
+--bubbling-capturing-detailed.html:23 u clicked on grandParent DIV
+
+So what we see as when we trigger an event on a particular HTML element(or node), it propagates to its top parent element, starting from the eventListener attached element. It is like bubbles out to its last parent node, this is what called event bubbling. And provided that third parament(i.e. capture) on addEventListener is false (which is also default value). -->
