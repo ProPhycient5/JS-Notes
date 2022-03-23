@@ -62,7 +62,7 @@ Below is the code for debouncing implementation:
         	args = arguments;
         	clearTimeout(timer);
         	timer = setTimeout(() => {
-        		getData.apply(context, arguments);
+        		fn.apply(context, arguments);
         	}, delay);
         }
 	}
