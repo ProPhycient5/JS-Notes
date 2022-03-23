@@ -27,7 +27,7 @@ Below is the code for search box, when the user user types something, it will fe
 Below is gif of user action. If I type (say laptob), we get 6 times `fetching data...` in console with counter value as 5. So here what happened is console runs as many times as the user hit any key. 
 But in real life scenario, we don't want this, 
 - 1st, it will call many API request to show some suggestions.
-- 2nd, Backend Code needs to know what is the actual user input, which will be known when the user complete its typing for any search.
+- 2nd, API call needs to know what is the actual user input(sensible word not gibberish one), which will be known when the user complete its typing for any search.
 
 ![debounce-1](https://user-images.githubusercontent.com/71059909/159651542-ff061c95-102f-41ce-82cb-98f62fbbcf52.gif)
 
